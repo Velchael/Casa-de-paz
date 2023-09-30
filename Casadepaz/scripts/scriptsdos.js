@@ -7,15 +7,12 @@ const inputName = document.querySelector('.register-name');
 const inputEmail = document.querySelector('.register-email');
 const inputPassword = document.querySelector('.register-password');
 const registrationMessagedos = document.querySelector('#registration-messagedos');
-
 const loginUser = async (event) => {
   registrationMessage.textContent = '';
   registrationMessagedos.textContent = '';
   inputName.value = '';
   event.preventDefault();
-
   const user = { username: inputLoginName.value, password: inputLoginPassword.value };
-  
   try {
     const response = await fetch('http://localhost:3307/users/login', {
       method: 'POST',
@@ -50,13 +47,8 @@ const loginUser = async (event) => {
     registrationMessage.style.display = 'block';
   }
 
-//localStorage.setItem('usuarioLogueado', 'true');
- //window.location.href = "/index.html";
 };
 loginform.addEventListener('submit', loginUser)
-//window.location.href = "http://127.0.0.1:5501/Casadepaz/index.html";
-
-
 // Verificación de existencia de usuario
 const userExists = async (username, password) => {
   try {
@@ -67,7 +59,6 @@ const userExists = async (username, password) => {
       },
       body: JSON.stringify({ username, password })
     });
-
     if (response.status === 200) {
       const user = await response.json();
       return !!user; // Regresa true si el usuario existe, false en caso contrario
@@ -79,7 +70,6 @@ const userExists = async (username, password) => {
     return false;
   }
 };
-
 // Registro de nuevo usuario
 const registerUser = async (event) => {
   console.log('Función registerUser iniciada'); // Agrega un mensaje para verificar si la función se inicia
@@ -110,7 +100,6 @@ const registerUser = async (event) => {
       registrationMessagedos.textContent = 'El registro se ha realizado con éxito';
       registrationMessagedos.style.color = 'green';
       registrationMessagedos.style.display = 'block';
-   
     } else {
       console.error('Error al registrar el usuario:', response.status); // Agrega un mensaje de error en caso de un problema
       registrationMessagedos.textContent = 'Error: No se pudo registrar';

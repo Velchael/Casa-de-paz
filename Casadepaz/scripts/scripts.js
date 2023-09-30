@@ -1,16 +1,4 @@
 
-//document.addEventListener("DOMContentLoaded", function () {
-  ///setTimeout(function () {
- // document.getElementById("popup").style.display = "block";
-//}, 30000); // Muestra el popup después de 30 segundos (30000 ms)
-
- //document.getElementById("loginButton").addEventListener("click", function () {
-  // Redirige al usuario a la página de inicio de sesión (reemplaza "/inicio-sesion" con la URL de tu página de inicio de sesión)
-  //document.getElementById("popup").style.display = "none";
- //  window.location.href ="/inicio-sesion.html";
-//});
-//});
-
   document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
     document.getElementById("popupModal").style.display = "block";
@@ -20,7 +8,6 @@
             window.location.href = "./inicio-sesion.html";
         });
     });
-  
 /********Meenu lateral ******************** */
 var sideMenu = document.getElementById('side-menu');
 function openMenu() {
