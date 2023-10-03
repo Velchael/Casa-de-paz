@@ -7,6 +7,12 @@
             // Reemplaza "/inicio-sesion.html" con la URL de tu página de inicio de sesión
             window.location.href = "./inicio-sesion.html";
         });
+
+         // Agrega un evento al botón de cierre para cerrar el popupModal
+    document.getElementById("closeButton").addEventListener("click", function () {
+      var popupModal = document.getElementById("popupModal");
+    popupModal.style.display = "none";
+  });
     });
 /********Meenu lateral ******************** */
 var sideMenu = document.getElementById('side-menu');

@@ -45,6 +45,9 @@ const loginUser = async (event) => {
     registrationMessage.textContent = 'Error de conexão. Tente novamente mais tarde.';
     registrationMessage.style.color = 'red';
     registrationMessage.style.display = 'block';
+    setTimeout(function () {
+      window.location.href = "./index.html";
+    }, 2000);
   }
 
 };
@@ -67,6 +70,9 @@ const userExists = async (username, password) => {
     }
   } catch (error) {
     console.error('Error al verificar el usuario:', error);
+    setTimeout(function () {
+      window.location.href = "./index.html";
+    }, 2000);
     return false;
   }
 };
@@ -111,6 +117,9 @@ const registerUser = async (event) => {
     registrationMessagedos.textContent = 'Error de conexión, inténtalo de nuevo más tarde';
     registrationMessagedos.style.color = 'red';
     registrationMessagedos.style.display = 'block';
+    setTimeout(function () {
+      window.location.href = "./index.html";
+    }, 2000);
   }
   inputName.value = '';
   inputEmail.value = '';
